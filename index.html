@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Birthday Pyone Moh Moh 💖</title>
+  <style>
+    :root{
+      --bg1:#ffe0e8;
+      --bg2:#fff3f8;
+      --accent:#ff6bcb;
+      --card:#ffffff;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      display:flex;align-items:center;justify-content:center;
+      background: linear-gradient(135deg,var(--bg1),var(--bg2));
+      padding:20px;
+    }
+    .card{
+      width:380px;height:520px;border-radius:20px;background:white;position:relative;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.1);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;
+    }
+    h1{color:#ff4fa2;font-size:26px;margin-bottom:12px}
+    h2{color:#444;font-size:20px;margin-bottom:8px}
+    p{color:#333;line-height:1.5;font-size:15px}
+    .dates{margin-top:20px;background:#fff6fa;border-radius:12px;padding:10px 16px;text-align:left;width:100%;}
+    .dates strong{color:#ff4fa2}
+    .footer{margin-top:20px;font-size:13px;color:#777}
+    .confetti{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:10}
+    button{margin-top:20px;background:var(--accent);color:#fff;border:none;padding:10px 16px;border-radius:10px;cursor:pointer;font-weight:600;box-shadow:0 4px 12px rgba(255,107,203,0.3);}
+  </style>
+</head>
+<body>
+  <canvas class="confetti" id="confetti"></canvas>
+  <div class="card">
+    <h1>Happy Birthday 🎂</h1>
+    <h2>Pyone Moh Moh</h2>
+    <p>Born on <strong>14 November 2002</strong><br>
+    You fill my life with joy, laughter, and endless love. Every day since we met has been brighter because of you. 💕</p>
+
+    <div class="dates">
+      <p><strong>Our Story:</strong></p>
+      <p>💞 Anniversary: 20 April 2020</p>
+      <p>💍 Married: 12 October 2022</p>
+      <p>💐 Wedding Days: 10 December 2023 & 25 February 2024</p>
+    </div>
+
+    <button id="celebrateBtn">Celebrate 🎉</button>
+    <div class="footer">Made with ❤️ by your forever one.</div>
+  </div>
+
+  <script>
+    const canvas=document.getElementById('confetti');
+    const ctx=canvas.getContext('2d');
+    let W=canvas.width=window.innerWidth,H=canvas.height=window.innerHeight;
+    window.addEventListener('resize',()=>{W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight});
+
+    function random(min,max){return Math.random()*(max-min)+min}
+    let particles=[];
+
+    function createConfetti(){
+      for(let i=0;i<150;i++){
+        particles.push({x:random(0,W),y:random(-H,0),r:random(6,12),d:random(2,6),color:`hsl(${random(300,360)},80%,70%)`});
+      }
+    }
+
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      particles.forEach(p=>{
+        p.y+=p.d; p.x+=Math.sin(p.y*0.02);
+        ctx.beginPath();ctx.fillStyle=p.color;ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();
+        if(p.y>H){p.y=random(-H,0);p.x=random(0,W)}
+      });
+      requestAnimationFrame(draw);
+    }
+
+    document.getElementById('celebrateBtn').addEventListener('click',()=>{
+      if(particles.length===0){createConfetti();draw();}
+    });
+  </script>
+</body>
+</html>
