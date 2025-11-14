@@ -19,14 +19,46 @@
       background: linear-gradient(135deg,var(--bg1),var(--bg2));
       padding:20px;
     }
+    
+    
+::-webkit-scrollbar {
+  width: 5px;        
+  height: 5px;      
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff4fa2 ;  
+  border-radius: 6px;       
+}
+
+::-webkit-scrollbar-track {
+  background: #fff6fa;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ff4fa2 ;
+}
+    
     .card{
-      width:380px;height:520px;border-radius:20px;background:white;position:relative;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.1);
+      width:380px;height:580px;border-radius:20px;background:white;position:relative;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.1);
       display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;
-      overflow-y:scroll;
+      
     }
+    
     h1{color:#ff4fa2;font-size:26px;margin-bottom:12px}
     h2{color:#444;font-size:20px;margin-bottom:8px}
     p{color:#333;line-height:1.5;font-size:15px}
+    
+    .content-box {
+      background:#fff6fa;
+      padding:10px 16px;
+      border-radius: 12px;
+      text-align: justify-content;
+      max-height: 150px;
+      overflow-y: scroll;
+    }
     .dates{margin-top:20px;background:#fff6fa;border-radius:12px;padding:10px 16px;text-align:left;width:100%;}
     .dates strong{color:#ff4fa2}
     .footer{margin-top:20px;font-size:13px;color:#777}
@@ -39,7 +71,7 @@
   <div class="card">
     <h1>Happy Birthday 🎂</h1>
     <h2>Pyone Moh Moh</h2>
-    <p style="text-align:justify;">Born on <strong>14 November 2002</strong><br>
+    <p class="content-box" style="text-align:justify;">Born on <strong>14 November 2002</strong><br>
     🎁Happy Birthday🎉 ပါ အချစ်ကလေး။ 2020 ကနေ အခု အချိန်အထိ အနားမှာ အေးအတူ ပူအမျှရှိနေပေးခဲ့တာကြောင့် အရင်ဆုံးကျေးဇူးတင်ချင်ပါတယ်။ မွေးနေ့မှာ အတူရှိမပေးနိုင်တာကြောင့် စိတ်မကောင်းဖြစ်မိပေမဲ့ နောက်နောင် အနားမှာ အမြဲအတူရှိနိုင်ဖိုအတွက်ကြိုးစားနေတာကြောင့် ကိုကို ပြန်လာတဲ့အခါ အခုထက် ပိုကောင်းတဲ့ဘဝမှာ သားသားမီးမီးလေးတွေနဲ့ အတူတူနေကြမယ်နော် အချစ်ကလေး။ 
 
 23 နှစ်ပြည့်မွေးနေ့မှစပြီး ဘဝကို ပျော်ရွှင်စွာဖြင့်နေနိုင်ပြီး အကောင်းဆုံးဆိုတာတွေပဲ ရရှိနိုင်ပါစေလို ဆုတောင်းပေးလိုက်ပါတယ်နော်။ </p>
